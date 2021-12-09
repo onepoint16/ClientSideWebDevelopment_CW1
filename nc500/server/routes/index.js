@@ -242,7 +242,7 @@ var itineraries = [
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+    res.render('index', { title: 'Express' });
 });
 
 // ENDPOINTS
@@ -252,11 +252,11 @@ router.get('/hostels', function(req, res) {
     hostels.length==0 ? res.status(404): res.status(200);
     res.send(hostels);
 })
-  
+
 /* GET hostel by id */
 router.get('/hostels/:id', function(req, res) { 
     var selectedhostels = hostels.filter(function(hostel) {
-      return hostel.id == req.params["id"];
+        return hostel.id == req.params["id"];
     });
     selectedhostels.length==0 ? res.status(404): res.status(200);
     res.send(selectedhostels);
@@ -264,50 +264,50 @@ router.get('/hostels/:id', function(req, res) {
 
 /* GET books by search term in description or title (TBD) */
 router.get('/hostels/search/:term', function(req, res) { 
-  var selectedhostels = hostels.filter(function(hostel) {
-    var result = (hostel.address.toLowerCase().search(req.params["term"].toLowerCase())>=0) || 
-        (hostel.description.toLowerCase().search(req.params["term"].toLowerCase())>=0);
-    return result;
-  });
-  selectedhostels.length==0 ? res.status(404): res.status(200);
-  res.send(selectedhostels);
+    var selectedhostels = hostels.filter(function(hostel) {
+        var result = (hostel.address.toLowerCase().search(req.params["term"].toLowerCase())>=0) || 
+            (hostel.description.toLowerCase().search(req.params["term"].toLowerCase())>=0);
+        return result;
+    });
+selectedhostels.length==0 ? res.status(404): res.status(200);
+res.send(selectedhostels);
 })
 
 
 /* GET add rating for hostel by id */
 router.get('/hostels/rate/:id/:rating', function(req, res) { 
-  var id = req.params["id"];
-  var rating = Number(req.params["rating"]);
-  var hostel = hostels.find(x => x.id == id);
-  hostel.ratings.push(rating);
-  res.status(202);
-  res.send(hostel);
+    var id = req.params["id"];
+    var rating = Number(req.params["rating"]);
+    var hostel = hostels.find(x => x.id == id);
+    hostel.ratings.push(rating);
+    res.status(202);
+    res.send(hostel);
 })
 
 /* POST new review for hostel by id */
 /* body should be of the form {"reviewer":"anon", "review":"Great hostel"}  */
 router.post('/hostels/review/:id', function(req, res) { 
-  var id = req.params["id"];
-  var hostel = hostels.find(x => x.id == id);
-  var newreview = req.body;
-  hostel.reviews.push(newreview);     
-  res.status(202);
-  res.send(hostel);
+    var id = req.params["id"];
+    var hostel = hostels.find(x => x.id == id);
+    var newreview = req.body;
+    hostel.reviews.push(newreview);     
+    res.status(202);
+    res.send(hostel);
 })
 
 /* GET all itineraries */
 router.get('/itineraries', function(req, res) { 
     itineraries.length==0 ? res.status(404): res.status(200);
     res.send(itineraries);
-  })
+})
 
 /* GET itinerary for user */
 router.get('/itineraries/:user', function(req, res) { 
-  var selecteditinerary = itineraries.filter(function(it) {
-    return it.user == req.params["user"];
-  });
-  selecteditinerary.length==0 ? res.status(404): res.status(200);
-  res.send(selecteditinerary);
+    var selecteditinerary = itineraries.filter(function(it) {
+        return it.user == req.params["user"];
+    });
+    selecteditinerary.length==0 ? res.status(404): res.status(200);
+    res.send(selecteditinerary);
 })
 
 /* GET create new itinerary for user */
