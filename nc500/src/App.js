@@ -4,6 +4,7 @@ import { Route, Routes, BrowserRouter, NavLink } from "react-router-dom";
 
 import Itinerary from "./components/itinerary";
 import Hostels from "./components/hostels";
+import Hostel from './components/hostel';
 
 const Home = () => (
   <div>
@@ -43,6 +44,7 @@ class App extends Component {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="hostels" element={<Hostels />} />
+                <Route path="hostel" element={<Hostel />} />
                 <Route path="itinerary" element={<Itinerary />} />
               </Routes>
             </div>
