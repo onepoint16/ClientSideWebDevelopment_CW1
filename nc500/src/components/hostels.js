@@ -1,19 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import Hostel from './hostel'
+import Button from '@restart/ui/esm/Button';
 
 class HostelsTable extends Component {
+
+    hostelSelector(){
+        
+        export const hostelContext = createContext();
+
+        return(
+            <hostelContext.Provider value={{ hostel, sethostel }}>
+                <div>
+                    <Hostel />
+                </div>
+            </hostelContext.Provider>
+        )
+    }
 
     render() {
         return (
             <tr>
-                <td>
-                    {this.props.obj.id}
-                </td>
-                <li className="nav-item active">
-                    <NavLink className="nav-link" to={"/hostel"}>{this.props.obj.name}</NavLink>
-                </li>
+                <Button onClick={this.hostelSelector}>
+                {this.props.obj.id} {this.props.obj.name}
+                </Button>
             </tr>
         );
     }
@@ -54,6 +65,9 @@ export default class Hostels extends Component {
                             {this.hostelsTable()}
                         </tbody>
                     </table>
+                </div>
+                <div>
+                    {this.hostelSelector()}
                 </div>
             </div>
         )

@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import axios from 'axios';
 import {Card, Button} from 'react-bootstrap'
+import { hostelContext } from './hostels';
 
 class DataTable extends Component {
 
@@ -22,6 +23,8 @@ class DataTable extends Component {
 }
 
 export default class Hostel extends Component {
+
+    // const { setHostel } = useContext(hostelContext) Need to fix but were onto something
 
     constructor(props) {
         super(props);
