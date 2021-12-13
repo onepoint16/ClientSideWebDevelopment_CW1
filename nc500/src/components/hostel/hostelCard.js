@@ -5,7 +5,11 @@ class HostelCard extends Component{
 
     constructor(props) {
         super(props);
-        console.log(this.props.obj);
+            const hostel = this.props.hostel;
+
+        this.state = {
+            obj: this.props.obj
+        };
     }
 
     render() {
@@ -13,10 +17,10 @@ class HostelCard extends Component{
             <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
-                    <Card.Title>{this.props.obj.name}</Card.Title>
-                    <Card.Subtitle>Stop: {this.props.obj.id}</Card.Subtitle>
+                    <Card.Title>{this.props.hostel.name}</Card.Title>
+                    <Card.Subtitle>Stop: {this.props.hostel.id}</Card.Subtitle>
                     <Card.Text>
-                        {this.props.obj.description}
+                        {this.props.hostel.description}
                     </Card.Text>
                     <Button variant="primary">Write a Review</Button>
                 </Card.Body>

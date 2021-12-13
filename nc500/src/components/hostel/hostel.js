@@ -7,7 +7,7 @@ export default class Hostel extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { hostelData: []};
+        this.state = { hostelData: [], currentHostel: [] };
     }
 
     componentDidMount() {
@@ -24,12 +24,9 @@ export default class Hostel extends Component {
     }
 
     hostelCard() {
-        
-        return(
-            // console.log(this.state.hostelData)
-            <HostelCard obj={this.state.hostelData}/> 
-        );
-
+        return this.state.hostelData.map(function (currentHostel, i) {
+            return <HostelCard hostel={currentHostel} key={i} />;
+        });
     }
 
     render() {
