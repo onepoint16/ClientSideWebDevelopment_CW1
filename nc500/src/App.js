@@ -2,8 +2,9 @@ import React, { Component }from 'react';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes, BrowserRouter, NavLink } from "react-router-dom";
 
-import Itinerary from "./components/itinerary";
-import Hostels from "./components/hostels";
+import Itinerary from "./components/itinerary/itinerary";
+import Hostels from "./components/hostels/hostels";
+import Hostel from './components/hostel/hostel';
 
 const Home = () => (
   <div>
@@ -43,6 +44,7 @@ class App extends Component {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="hostels" element={<Hostels />} />
+                <Route path="hostel" element={<Hostel />} />
                 <Route path="itinerary" element={<Itinerary />} />
               </Routes>
             </div>
