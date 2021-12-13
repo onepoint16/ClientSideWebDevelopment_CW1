@@ -3,6 +3,11 @@ import {Card, Button} from 'react-bootstrap'
 
 class HostelCard extends Component{
 
+    constructor(props) {
+        super(props);
+        console.log(this.props.obj);
+    }
+
     render() {
         return (
             <Card style={{ width: '18rem' }}>

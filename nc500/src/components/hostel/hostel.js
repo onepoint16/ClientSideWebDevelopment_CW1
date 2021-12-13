@@ -4,10 +4,10 @@ import HostelCard from './hostelCard';
 
 
 export default class Hostel extends Component {
- 
+
     constructor(props) {
         super(props);
-        this.state = { hostelsCollection: [] };
+        this.state = { hostelData: []};
     }
 
     componentDidMount() {
@@ -24,9 +24,12 @@ export default class Hostel extends Component {
     }
 
     hostelCard() {
-        return this.state.hostelData.map((data, i) => {
-            return <HostelCard obj={data} key={i} />;
-        });
+        
+        return(
+            // console.log(this.state.hostelData)
+            <HostelCard obj={this.state.hostelData}/> 
+        );
+
     }
 
     render() {

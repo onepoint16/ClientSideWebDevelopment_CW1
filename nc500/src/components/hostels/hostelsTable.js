@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, setState } from 'react';
 import {Button} from 'react-bootstrap'
 import Hostel from '../hostel/hostel'
 
@@ -10,27 +10,23 @@ class HostelsTable extends Component {
     }
 
     handleClick() {
-        this.state({ showHostel: true} );
+        //find code to invert choice on click 
+        //then pass handle click onto hostel
+        this.setState({ showHostel : true });
     }
 
     render() {
 
-        const ShowHostel = this.state.showHostel;
-
-        if (ShowHostel) {
-            return (
-                <div>
-                    <Hostel />
-                </div>
-            );
-        }
+        const showSelectedHostel = this.state.showHostel;
 
         return (
-
-            <Button onClick={this.handleClick}>
-            {this.props.obj.id} {this.props.obj.name}
-            </Button>
-            
+            <div>
+                {showSelectedHostel && <Hostel hostelId={this.props.obj.id} /> }
+                {!showSelectedHostel &&
+                <Button key={this.props.obj.id} onClick={() => this.handleClick()}>
+                    {this.props.obj.id} {this.props.obj.name}
+                </Button>}
+            </div> 
         );
     }
 }
