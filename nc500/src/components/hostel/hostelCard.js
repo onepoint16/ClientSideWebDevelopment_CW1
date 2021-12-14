@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Card, Button} from 'react-bootstrap'
 
+
 class HostelCard extends Component{
 
     constructor(props) {
@@ -12,18 +13,21 @@ class HostelCard extends Component{
         };
     }
 
+    
+
     render() {
         return (
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>{this.props.hostel.name}</Card.Title>
-                    <Card.Subtitle>Stop: {this.props.hostel.id}</Card.Subtitle>
-                    <Card.Text>
+            <Card bg="primary" style={{ width: '18rem', height:"fit-content",boxShadow:"0.5rem 1rem 1rem rgba(0, 0, 0, 0.5)", }}>
+                <Card.Img variant="top" src={"./" + this.props.hostel.name + ".jpg"} />
+                <Card.Title className='text-center'>{this.props.hostel.name}</Card.Title>
+                <Card.Subtitle className="text-muted text-center bg-light ">Stage:  {this.props.hostel.id}</Card.Subtitle>
+                <Card.Body className="bg-light" ><Card.Text>
                         {this.props.hostel.description}
                     </Card.Text>
-                    <Button variant="primary">Write a Review</Button>
-                </Card.Body>
+                    </Card.Body>
+                    <Card.Footer className="text-center">
+                    <Button variant="primary">Write a Review</Button></Card.Footer>
+                
             </Card>
         );
     }

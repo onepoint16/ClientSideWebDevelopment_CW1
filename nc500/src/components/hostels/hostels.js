@@ -33,10 +33,11 @@ export default class Hostels extends Component {
                     <img src='https://www.practicalmotorhome.com/wp-content/uploads/2020/07/MCB3332.nc500.route_map.jpg' 
                     alt="map of nc500 here"/>
                 </div>
-                <div className="container">
+                <div className="container-fluid">
+                    <div className="justify-content-center card-group gap-3">
                     
                     {this.hostelsTable()}
-                        
+                    </div>
                 </div>
             </div>
         )
