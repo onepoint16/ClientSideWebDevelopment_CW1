@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Card, Button, CloseButton, Badge, Accordion} from 'react-bootstrap'
 import ReactStars from "react-stars"
 import axios from 'axios';
-import HostelsTable from '../hostels/hostelsTable';
+import HostelsButtons from '../hostels/hostelsButtons';
 
 
 class HostelCard extends Component{
@@ -22,7 +22,7 @@ class HostelCard extends Component{
         console.log(this.props.showHostel)
         return (
             <div>
-                <HostelsTable ShowHostel={this.props.showHostel}/>
+                <HostelsButtons ShowHostel={this.props.showHostel}/>
             </div>
             
         );
@@ -50,7 +50,6 @@ class HostelCard extends Component{
                 <Card.Img variant="top" src={"./" + this.props.hostel.name + ".jpg"} />
                 <Card.Title className='text-center'>{this.props.hostel.name}</Card.Title>
                 <Card.Subtitle className="text-muted text-center bg-light ">Stage:  {this.props.hostel.id}</Card.Subtitle>
-                <Card.Subtitle className="text-sm text-muted text-center bg-light ">{this.props.hostel.address}, {this.props.hostel.postcode}</Card.Subtitle>
                 <Badge style={{borderRadius:"1rem", display:"flex"}} className="bg-primary ms-2" >
                     <ReactStars count={5} value={(this.props.hostel.ratings.reduce((a, b) => a + b, 0) / this.props.hostel.ratings.length).toFixed(2)} 
                     size={24} color2={'#ffd700'} edit={false}/>
@@ -60,6 +59,8 @@ class HostelCard extends Component{
                         {this.props.hostel.description}
                     </Card.Text>
                     <Card.Subtitle className="text-sm text-muted text-center ">{this.props.hostel.email}</Card.Subtitle>
+                    <br/>
+                    <Card.Subtitle className="text-sm text-muted text-center bg-light ">{this.props.hostel.address}, {this.props.hostel.postcode}</Card.Subtitle>
                     <br/>
                     <Card.Subtitle className="text-sm text-muted text-center ">{this.props.hostel.phone}</Card.Subtitle>
                 </Card.Body>

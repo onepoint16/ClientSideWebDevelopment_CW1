@@ -1,26 +1,27 @@
-import React, { Component, useState } from 'react';
-import DatePicker from "react-datepicker";
+import React, { Component } from 'react';
+import TableDatePicker from './tableDatePicker'; 
+import StageSelector from './stageSelector';
+import DisplayTrip from './displayTrip';
 
 
 export default class Itinerary extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { startTrip : false, trip: [], startDate : new Date(), setStartDate : new Date() };
-    }
-
-    selectStartDate() {
-        // const [startDate, setStartDate] = this.setState(new Date());
-        return (
-            <DatePicker selected={this.startDate} onChange={(date) => this.setStartDate(date)} />
-        );
+        this.state = { startTrip : false, trip: []};
     }
 
     render() {
         return (
             <div>
                 <h2>Plan your trip </h2>
-                {!this.startTrip && this.selectStartDate()}
+                <div className='nc500_image'>
+                    <img width="350px" height="350px" src="./nc500-map.png"
+                    alt="map of nc500 here"/>
+                </div>
+                <TableDatePicker />
+                <StageSelector />
+                <DisplayTrip />
             </div>
         )
     }

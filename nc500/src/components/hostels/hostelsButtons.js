@@ -2,7 +2,7 @@ import React, { Component, useState, setState } from 'react';
 import {Button} from 'react-bootstrap'
 import Hostel from '../hostel/hostel'
 
-class HostelsTable extends Component {
+class HostelsButtons extends Component {
 
     constructor(props) {
         super(props);
@@ -29,4 +29,4 @@ class HostelsTable extends Component {
     }
 }
 
-export default HostelsTable;
+export default HostelsButtons;

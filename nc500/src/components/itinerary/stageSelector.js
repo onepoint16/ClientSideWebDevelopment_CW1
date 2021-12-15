@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import HostelsButtons from './hostelsButtons';
+import HostelsTable from './hostelsTable';
 
-
-export default class Hostels extends Component {
+export default class StageSelector extends Component {
 
     constructor(props) {
         super(props);
@@ -22,19 +21,13 @@ export default class Hostels extends Component {
 
     hostelsSort() {
         return this.state.hostelsCollection.map((data, i) => {
-            return <HostelsButtons obj={data} key={i} />;
+            return <HostelsTable obj={data} key={i} />;
         });
     }
 
     render() {
         return (
             <div className="wrapper-users">
-                <h2>View the Hostels</h2>
-                <h3>at each stage</h3>
-                <div className='nc500_image'>
-                    <img width="350px" height="350px" src="./nc500-map.png"
-                    alt="map of nc500 here"/>
-                </div>
                 <div className="container-fluid">
                     <div className="justify-content-center card-group gap-3">
                     {this.hostelsSort()}
@@ -44,3 +37,4 @@ export default class Hostels extends Component {
         )
     }
 }
+
