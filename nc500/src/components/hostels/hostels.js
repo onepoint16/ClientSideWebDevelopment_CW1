@@ -29,13 +29,14 @@ export default class Hostels extends Component {
     render() {
         return (
             <div className="wrapper-users">
+                <h2>View the Hostels</h2>
+                <h3>at each stage</h3>
                 <div className='nc500_image'>
-                    <img src='https://www.practicalmotorhome.com/wp-content/uploads/2020/07/MCB3332.nc500.route_map.jpg' 
+                    <img width="350px" height="350px" src="./nc500-map.png"
                     alt="map of nc500 here"/>
                 </div>
                 <div className="container-fluid">
                     <div className="justify-content-center card-group gap-3">
-                    
                     {this.hostelsTable()}
                     </div>
                 </div>

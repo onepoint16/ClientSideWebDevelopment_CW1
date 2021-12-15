@@ -10,8 +10,6 @@ class HostelsTable extends Component {
     }
 
     handleClick() {
-        //find code to invert choice on click 
-        //then pass handle click onto hostel
         this.setState({ showHostel : true });
     }
 
