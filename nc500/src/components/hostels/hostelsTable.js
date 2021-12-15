@@ -22,7 +22,7 @@ class HostelsTable extends Component {
                 {showSelectedHostel && <Hostel hostelId={this.props.obj.id} /> }
                 {!showSelectedHostel &&
                 <Button key={this.props.obj.id} onClick={() => this.handleClick()}>
-                    {this.props.obj.id} {this.props.obj.name}
+                    {this.props.obj.id}. {this.props.obj.name}
                 </Button>}
             </div> 
         );
