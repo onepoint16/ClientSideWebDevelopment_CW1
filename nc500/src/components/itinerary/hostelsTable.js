@@ -18,19 +18,12 @@ class HostelsTable extends Component {
 
     render() {
         return (
-            <Table variant='light'>
                 <tr>
+                    <td>Stage: {this.props.obj.id}</td>
+                    <td style={{width:"20rem"}} >{this.props.obj.name}</td>
+                    <td><input style={{width:"15rem"}} className="form-control" id="nights" type="number" min="1" max="7" placeholder="How many nights " /></td>
                     <td>
-                        Stage: {this.props.obj.id}
-                    </td>
-                    <td>
-                        {this.props.obj.name}
-                    </td>
-                    <td>
-                        <input className="form-control" id="nights" type="number" min="1" max="7" placeholder="How many nights " />
-                    </td>
-                    <td>
-                        <Button variant="secondary"onClick={()=>{
+                        <Button className="bg-primary" onClick={()=>{
                             let destination = this.props.obj.name;
                             let nights = document.getElementById('nights').value;
                             this.makeItinerary(destination, nights);
@@ -38,7 +31,7 @@ class HostelsTable extends Component {
                         </Button>
                     </td>
                 </tr>
-            </Table>
+            
         );
     }
 }
