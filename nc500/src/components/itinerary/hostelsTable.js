@@ -11,6 +11,7 @@ class HostelsTable extends Component {
 
     makeItinerary(destination, nights) {
         this.setState({ selectedStages : [destination, nights]})
+        console.log(this.selectedStages);
         return this.state.selectedStages.map(function (trip, i) {
         });
     }
