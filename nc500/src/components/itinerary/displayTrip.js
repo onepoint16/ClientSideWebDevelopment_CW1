@@ -10,7 +10,7 @@ class DisplayTrip extends Component {
     render(){
         return(
             <div>
-                <h3>You Trip</h3>
+                <h3>Your Trip</h3>
                 <li>
                     <ul>
                         {this.props.destination}

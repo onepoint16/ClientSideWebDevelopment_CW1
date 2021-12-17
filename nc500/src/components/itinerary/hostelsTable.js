@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Button, Table} from 'react-bootstrap'
-import 'react-number-selector/dist/index.css'
 import DisplayTrip from './displayTrip';
 
 class HostelsTable extends Component {
