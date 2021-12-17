@@ -8,6 +8,7 @@ class DisplayTrip extends Component {
     }
 
     render(){
+        console.log(JSON.stringify(this.props))
         return(
             <div>
                 <h3>Your Trip</h3>

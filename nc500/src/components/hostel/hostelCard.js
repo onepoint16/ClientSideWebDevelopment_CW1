@@ -9,20 +9,18 @@ class HostelCard extends Component{
 
     constructor(props) {
         super(props);
-            const hostel = this.props.hostel;
 
         this.state = {
             obj: this.props.obj,
-            showHostel : true
+            showHostel : this.props.showHostel
         };
     }
 
     closeClick() {
-        this.setState({ showHostel : false });
-        console.log(this.props.showHostel)
+        this.setState({ showHostel : false })
         return (
             <div>
-                <HostelsButtons ShowHostel={this.props.showHostel}/>
+                <HostelsButtons close={this.props.showHostel}/>
             </div>
             
         );
@@ -51,7 +49,7 @@ class HostelCard extends Component{
                 <Card.Title className='text-center'>{this.props.hostel.name}</Card.Title>
                 <Card.Subtitle className="text-muted text-center bg-light ">Stage:  {this.props.hostel.id}</Card.Subtitle>
                 <Badge style={{borderRadius:"1rem", display:"flex"}} className="bg-primary ms-2" >
-                    <ReactStars count={5} value={(this.props.hostel.ratings.reduce((a, b) => a + b, 0) / this.props.hostel.ratings.length).toFixed(2)} 
+                    <ReactStars count={5} value={parseInt(this.props.hostel.ratings.reduce((a, b) => a + b, 0) / this.props.hostel.ratings.length)} 
                     size={24} color2={'#ffd700'} edit={false}/>
                 </Badge>
                 <Card.Body className="bg-light" >

@@ -1,3 +1,23 @@
+# To run this app
+
+## You require 
+Computer with internet access
+Insatll node package manager
+Access to a code editor such as VS Code
+Access to a browser (preferably google chrome)
+
+## Please follow these instructions
+
+To run the application access your computers terminal or command line interface. Navigate to the nc500 folder 'cd ../nc500' and proceed to install all necessary packages by running npm install.
+
+Once complete navigate to the server folder within the nc500 folder 'cd ../nc500/server' proceed to run npm install again to ensure all server dependencies are isntalled. 
+
+Once complete navigate back tot he nc500 folder 'cd ../nc500' and run the application by entering npm start into the terminal.
+
+Within the terminal confirmation the server has started should be given alongside confirmation the front end application has started. The terminal will then direct you to open a browser window and navigate to 'http://localhost:3000/'
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

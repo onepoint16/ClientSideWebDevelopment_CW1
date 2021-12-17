@@ -6,10 +6,10 @@ class HostelsButtons extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { showHostel : false };
+        this.state = { showHostel : this.props.showHostel };
     }
 
-    handleClick() {
+    openClick() {
         this.setState({ showHostel : true });
     }
 
@@ -19,11 +19,12 @@ class HostelsButtons extends Component {
 
         return (
             <div>
-                {showSelectedHostel && <Hostel hostelId={this.props.obj.id} /> }
+                {showSelectedHostel && <Hostel showHostel={this.props.showHostel} hostelId={this.props.obj.id} /> }
                 {!showSelectedHostel &&
-                <Button key={this.props.obj.id} onClick={() => this.handleClick()}>
+                <Button key={this.props.obj.id} onClick={() => this.openClick()}>
                     {this.props.obj.id}. {this.props.obj.name}
                 </Button>}
+                
             </div> 
         );
     }
