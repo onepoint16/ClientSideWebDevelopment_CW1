@@ -4,17 +4,16 @@ class DisplayTrip extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {};
     }
 
     render(){
-        console.log(JSON.stringify(this.props))
         return(
             <div>
                 <h3>Your Trip</h3>
+                <p>Still in poroduction</p>
                 <li>
                     <ul>
-                        {this.props.destination}
+                        {this.props.plannedTrip}
                     </ul>
                     <ul>
                         {this.props.nights}

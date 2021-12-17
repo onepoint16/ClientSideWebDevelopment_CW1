@@ -8,7 +8,7 @@ export default class Itinerary extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { startTrip : false, trip: []};
+        this.state = { displayTripList : []}
     }
 
     render() {
@@ -20,8 +20,8 @@ export default class Itinerary extends Component {
                     alt="map of nc500 here"/>
                 </div>
                 <TableDatePicker />
-                <StageSelector />
-                <DisplayTrip />
+                <StageSelector dtl={this.displayTripList}/>
+                <DisplayTrip dtl={this.displayTripList}/>
             </div>
         )
     }

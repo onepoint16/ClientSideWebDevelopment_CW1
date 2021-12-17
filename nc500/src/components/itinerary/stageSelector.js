@@ -7,7 +7,7 @@ export default class StageSelector extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { hostelsCollection: [] };
+        this.state = { hostelsCollection: []};
     }
 
     componentDidMount() {
